@@ -1,0 +1,11 @@
+--- orage-4.3.90.1/configure.ac.orig	2006-04-16 16:50:33.000000000 +0200
++++ orage-4.3.90.1/configure.ac	2006-05-17 08:47:12.803999250 +0200
+@@ -70,7 +70,7 @@
+ 
+ dnl Check for i18n support
+ XDT_I18N([ar az be bg bn_IN ca cs de el en_GB eo es et eu fa fi fr gu he \
+-          hi hu hy it ja ko lt mr ms nl nb_NO pa pl pt_BR pt_PT ro ru sk \
++          hi hu hy it ja ko lt mr ms nl nb pa pl pt_BR pt ro ru sk \
+           sv ta tr uk vi zh_CN zh_TW])
+ 
+ dnl Check for required packages
