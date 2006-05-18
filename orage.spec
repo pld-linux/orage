@@ -1,4 +1,5 @@
 Summary:	Calendar for Xfce
+Summary(pl):	Kalendarz dla Xfce
 Name:		orage
 Version:	4.3.90.1
 Release:	0.1
@@ -27,6 +28,12 @@ Orage is a time-managing application that is part of the Xfce Desktop
 Environment and features a calendar window, lists of events and
 reminders. It also provides an easy way to archive and manage your old
 appointments.
+
+%description -l pl
+Orage to aplikacja do zarz±dzania czasem bêd±ca czê¶ci± ¶rodowiska
+graficznego Xfce. Zawiera okno kalendarza, listê wydarzeñ i
+przypominajek. Udostêpnia tak¿e ³atwy sposób archiwizowania i
+zarz±dzania starymi spotkaniami.
 
 %prep
 %setup -q
