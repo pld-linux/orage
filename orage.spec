@@ -22,6 +22,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-dev-tools >= %{version}
+Requires(post,postun):	hicolor-icon-theme
 Obsoletes:	xfcalendar
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
