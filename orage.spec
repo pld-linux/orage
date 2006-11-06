@@ -1,18 +1,18 @@
 Summary:	Calendar for Xfce
 Summary(pl):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.3.99.1
+Version:	4.3.99.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	511dce3a93aa6e34973989e4441f23ec
+# Source0-md5:	40607e4b116c4d298745ef0672826cd8
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.6.4
+BuildRequires:	glib2-devel >= 1:2.12.4
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-dev-tools >= %{version}
+Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Obsoletes:	xfcalendar
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
