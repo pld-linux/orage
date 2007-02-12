@@ -1,5 +1,5 @@
 Summary:	Calendar for Xfce
-Summary(pl.UTF-8):   Kalendarz dla Xfce
+Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
 Version:	4.4.0
 Release:	1
