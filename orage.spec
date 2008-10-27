@@ -1,12 +1,12 @@
 Summary:	Calendar for Xfce
 Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.4.2
+Version:	4.4.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	0c69e4c20350c3000d49350991d3a520
+# Source0-md5:	004c1f838771bb8b22b3d61a86912653
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
