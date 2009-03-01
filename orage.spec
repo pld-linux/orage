@@ -1,25 +1,24 @@
 Summary:	Calendar for Xfce
 Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.4.3
+Version:	4.6.0
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	004c1f838771bb8b22b3d61a86912653
-Patch0:		%{name}-locale-names.patch
-URL:		http://www.xfce.org/
+# Source0-md5:	c3f71a922f9032119dbb1b37a09adf93
+URL:		http://www.xfce.org/projects/orage/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
+BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.12.4
 BuildRequires:	intltool >= 0.35.0
+BuildRequires:	libnotify-devel
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-dev-tools >= 4.4.0
 BuildRequires:	xfce4-panel-devel >= %{version}
 Requires(post,postun):	gtk+2
@@ -41,10 +40,6 @@ zarządzania starymi spotkaniami.
 
 %prep
 %setup -q
-%patch0 -p1
-
-mv -f po/{pt_PT,pt}.po
-mv -f po/{nb_NO,nb}.po
 
 %build
 %{__intltoolize}
@@ -64,7 +59,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.la
+mv $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/nb{_NO,}
 
 %find_lang %{name}
 
@@ -80,10 +76,15 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/*
+%attr(755,root,root) %{_bindir}/globaltime
+%attr(755,root,root) %{_bindir}/orage
+%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/orageclock
 %{_datadir}/orage
-%{_desktopdir}/*.desktop
-%{_datadir}/xfce4/panel-plugins/*.desktop
+%{_desktopdir}/xfcalendar.desktop
+%{_desktopdir}/xfce-xfcalendar-settings.desktop
+%{_datadir}/dbus-1/services/org.xfce.calendar.service
+%{_datadir}/dbus-1/services/org.xfce.orage.service
+%{_datadir}/xfce4/panel-plugins/orageclock.desktop
+%{_mandir}/man1/globaltime.1*
+%{_mandir}/man1/orage.1*
 %{_iconsdir}/hicolor/*/*/*
