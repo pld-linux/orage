@@ -1,12 +1,12 @@
 Summary:	Calendar for Xfce
 Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.6.0
+Version:	4.6.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	c3f71a922f9032119dbb1b37a09adf93
+# Source0-md5:	24fa43dd86ec5af5a4766620fd972cf2
 URL:		http://www.xfce.org/projects/orage/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -58,9 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
-mv $RPM_BUILD_ROOT%{_datadir}/locale/nb{_NO,}
 
 %find_lang %{name}
 
