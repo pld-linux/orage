@@ -1,26 +1,23 @@
+%define		xfce_version	4.7.0
 Summary:	Calendar for Xfce
 Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.6.1
-Release:	1
+Version:	4.7.5
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	24fa43dd86ec5af5a4766620fd972cf2
+Source0:	http://archive.xfce.org/src/apps/orage/4.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	00200f79c1282ff8f416b300a16f7f45
 URL:		http://www.xfce.org/projects/orage/
-BuildRequires:	autoconf >= 2.52
-BuildRequires:	automake
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.12.4
-BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libnotify-devel
-BuildRequires:	libtool
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libxfce4ui-devel >= %{xfce_version}
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce4-dev-tools >= 4.4.0
-BuildRequires:	xfce4-panel-devel >= %{version}
+BuildRequires:	xfce4-panel-devel >= %{xfce_version}
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Obsoletes:	xfcalendar
@@ -42,12 +39,6 @@ zarządzania starymi spotkaniami.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
 %configure \
 	--disable-static
 
