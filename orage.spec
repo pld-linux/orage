@@ -1,28 +1,27 @@
+%define		xfce_version	4.8.0
 Summary:	Calendar for Xfce
 Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.6.1
-Release:	2
+Version:	4.8.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	24fa43dd86ec5af5a4766620fd972cf2
-URL:		http://www.xfce.org/projects/orage/
-BuildRequires:	autoconf >= 2.52
-BuildRequires:	automake
+Source0:	http://archive.xfce.org/src/apps/orage/4.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	cc6770036ddc690c2a361079fdae5d22
+URL:		http://www.xfce.org/projects/orage
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.12.4
-BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libnotify-devel
-BuildRequires:	libtool
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libical-devel >= 0.43
+BuildRequires:	libnotify-devel >= 0.3.2
+BuildRequires:	libxfce4ui-devel >= %{xfce_version}
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	xfce4-dev-tools >= 4.4.0
-BuildRequires:	xfce4-panel-devel >= %{version}
-Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	hicolor-icon-theme
+BuildRequires:	popt-devel
+BuildRequires:	rpmbuild(macros) >= 1.601
+BuildRequires:	xfce4-dev-tools >= 4.8.0
+BuildRequires:	xfce4-panel-devel >= %{xfce_version}
+Requires:	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
 Obsoletes:	xfcalendar
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,12 +41,6 @@ zarządzania starymi spotkaniami.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
 %configure \
 	--disable-static
 
@@ -58,6 +51,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
 %find_lang %{name}
 
@@ -75,13 +70,16 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/globaltime
 %attr(755,root,root) %{_bindir}/orage
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/orageclock
+%attr(755,root,root) %{_bindir}/tz_convert
+%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-orageclock-plugin
 %{_datadir}/orage
+%{_desktopdir}/globaltime.desktop
 %{_desktopdir}/xfcalendar.desktop
 %{_desktopdir}/xfce-xfcalendar-settings.desktop
 %{_datadir}/dbus-1/services/org.xfce.calendar.service
 %{_datadir}/dbus-1/services/org.xfce.orage.service
-%{_datadir}/xfce4/panel-plugins/orageclock.desktop
+%{_datadir}/xfce4/panel-plugins/xfce4-orageclock-plugin.desktop
 %{_mandir}/man1/globaltime.1*
 %{_mandir}/man1/orage.1*
+%{_mandir}/man1/tz_convert.1*
 %{_iconsdir}/hicolor/*/*/*
