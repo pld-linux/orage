@@ -2,12 +2,12 @@
 Summary:	Calendar for Xfce
 Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.8.0
+Version:	4.8.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/apps/orage/4.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	cc6770036ddc690c2a361079fdae5d22
+# Source0-md5:	9c1139ce03e9f309240e712cf31b6a49
 URL:		http://www.xfce.org/projects/orage
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
