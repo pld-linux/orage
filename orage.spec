@@ -56,6 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 # duplicate of ur
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
+# there is no %{_datadir}/icons/hicolor/160x160 dir
+%{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/hicolor/160x160
+
 %find_lang %{name}
 
 %clean
@@ -85,5 +88,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/globaltime.1*
 %{_mandir}/man1/orage.1*
 %{_mandir}/man1/tz_convert.1*
-%{_iconsdir}/hicolor/48x48/*/*
-%{_iconsdir}/hicolor/scalable/*/*
+%{_iconsdir}/hicolor/*/*/*.png
+%{_iconsdir}/hicolor/scalable/*/*.svg
