@@ -10,7 +10,7 @@ Source0:	http://archive.xfce.org/src/apps/orage/4.10/%{name}-%{version}.tar.bz2
 # Source0-md5:	b33fa272d92f539a224a7a40b1926dfc
 URL:		http://www.xfce.org/projects/orage
 BuildRequires:	dbus-glib-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.12.4
 BuildRequires:	libical-devel >= 0.43
 BuildRequires:	libnotify-devel >= 0.3.2
