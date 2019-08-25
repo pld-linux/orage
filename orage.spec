@@ -2,12 +2,12 @@
 Summary:	Calendar for Xfce
 Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.10.0
-Release:	5
+Version:	4.12.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/apps/orage/4.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	b33fa272d92f539a224a7a40b1926dfc
+Source0:	http://archive.xfce.org/src/apps/orage/4.12/%{name}-%{version}.tar.bz2
+# Source0-md5:	2b7f5d38cb5c6edbcc65d0f52a742e46
 URL:		http://www.xfce.org/projects/orage
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-tools
@@ -18,7 +18,7 @@ BuildRequires:	libxfce4ui-devel >= %{xfce_version}
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	rpmbuild(macros) >= 1.601
-BuildRequires:	xfce4-dev-tools >= 4.8.0
+BuildRequires:	xfce4-dev-tools >= 4.14.0
 BuildRequires:	xfce4-panel-devel >= %{xfce_version}
 Requires:	desktop-file-utils
 Requires:	gtk-update-icon-cache
@@ -74,14 +74,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/globaltime
 %attr(755,root,root) %{_bindir}/orage
 %attr(755,root,root) %{_bindir}/tz_convert
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-orageclock-plugin
+%attr(755,root,root) %{_libdir}/xfce4/panel/plugins/liborageclock.so
 %{_datadir}/orage
 %{_desktopdir}/globaltime.desktop
 %{_desktopdir}/xfcalendar.desktop
 %{_desktopdir}/xfce-xfcalendar-settings.desktop
 %{_datadir}/dbus-1/services/org.xfce.calendar.service
 %{_datadir}/dbus-1/services/org.xfce.orage.service
-%{_datadir}/xfce4/panel-plugins/xfce4-orageclock-plugin.desktop
+%{_datadir}/xfce4/panel/plugins/xfce4-orageclock-plugin.desktop
 %{_mandir}/man1/globaltime.1*
 %{_mandir}/man1/orage.1*
 %{_mandir}/man1/tz_convert.1*
