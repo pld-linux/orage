@@ -2,20 +2,22 @@
 Summary:	Calendar for Xfce
 Summary(pl.UTF-8):	Kalendarz dla Xfce
 Name:		orage
-Version:	4.18.0
+Version:	4.20.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://archive.xfce.org/src/apps/orage/4.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	c12765da61022c710bb0d5aab3c9c56f
+Source0:	https://archive.xfce.org/src/apps/orage/4.20/%{name}-%{version}.tar.bz2
+# Source0-md5:	e7f2e8bd5878911ae4187584d650eac1
 Patch0:		libical3.patch
 URL:		https://www.xfce.org/projects/orage
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.12.4
-BuildRequires:	libical-devel >= 0.43
-BuildRequires:	libnotify-devel >= 0.3.2
+BuildRequires:	glib2-devel >= 1:2.58.4
+BuildRequires:	gtk+3-devel >= 3.24.0
+BuildRequires:	libical-devel >= 3.0
+BuildRequires:	libnotify-devel >= 0.7.0
 BuildRequires:	libxfce4ui-devel >= %{xfce_version}
+BuildRequires:	libxfce4util-devel >= %{xfce_version}
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	rpmbuild(macros) >= 1.601
@@ -81,5 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/org.xfce.orage-settings.desktop
 %{_datadir}/dbus-1/services/org.xfce.orage.service
 %{_datadir}/metainfo/org.xfce.orage.appdata.xml
+%{_datadir}/themes/Default/orage-4.0
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/scalable/*/*.svg
